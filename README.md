@@ -1,648 +1,42 @@
 # Product Management API
 
-A professional RESTful Backend API built using **Spring Boot** for managing products with complete CRUD operations and image upload functionality using **Cloudinary**.
+## Overview
 
-This project follows a clean layered architecture using **Controller, DTO, Service, Mapper, Repository, and Entity layers** to make the application scalable and maintainable.
+Product Management API is a RESTful backend application developed using Spring Boot. It provides CRUD operations for managing products with image upload support using Cloudinary. The project follows a layered architecture using Controller, Service, Repository, DTO, Mapper, and Entity.
 
 ---
 
-# Features
+## Features
 
 - Create Product
 - Get All Products
 - Get Product By ID
 - Update Product
 - Delete Product
-- Upload Product Images using Cloudinary
-- Store Image URL and Public ID
-- DTO based Request and Response Handling
-- Entity to DTO Conversion using Mapper
+- Cloudinary Image Upload
+- DTO (Request & Response)
+- Mapper
 - Global Exception Handling
 - Request Validation
 - MySQL Database Integration
 
 ---
 
-# Technology Stack
-
-## Backend
-
-- Java 21
-- Spring Boot
-- Spring MVC
-- Spring Data JPA
-- Hibernate
-
-## Database
-
-- MySQL
-
-## Tools & Services
-
-- Maven
-- Postman
-- Cloudinary
-- Git
-- GitHub
-
----
-
-# Project Architecture
-
-```
-Controller
-    |
-    ↓
-DTO
-    |
-    ↓
-Service
-    |
-    ↓
-Mapper
-    |
-    ↓
-Entity
-    |
-    ↓
-Repository
-    |
-    ↓
-Database
-```
-
----
-
-# API Endpoints
-
-## Create Product
-
-### POST
-
-```
-/products
-```
-
-Request Type:
-
-```
-multipart/form-data
-```
-
-Parameters:
-
-```
-name        : Product Name
-description : Product Description
-price       : Product Price
-file        : Product Image
-```
-
----
-
-## Get All Products
-
-### GET
-
-```
-/products
-```
-
-Returns all available products.
-
----
-
-## Get Product By ID
-
-### GET
-
-```
-/products/{id}
-```
-
-Example:
-
-```
-/products/1
-```
-
----
-
-## Update Product
-
-### PUT
-
-```
-/products/{id}
-```
-
-Parameters:
-
-```
-name
-description
-price
-file(optional)
-```
-
----
-
-## Delete Product
-
-### DELETE
-
-```
-/products/{id}
-```
-
-Example:
-
-```
-/products/1
-```
-
----
-
-# Database Configuration
-
-This project uses **MySQL Database** for storing product details.
-
-Configure database properties in:
-
-```
-application.properties
-```
-
-Required properties:
-
-```
-spring.datasource.url
-spring.datasource.username
-spring.datasource.password
-```
-
----
-
-# Cloudinary Configuration
-
-Cloudinary is used for product image upload and management.
-
-Required properties:
-
-```
-cloudinary.cloud-name
-cloudinary.api-key
-cloudinary.secret-key
-```
-
----
-
-# Exception Handling
-
-Centralized exception handling is implemented using:
-
-- @RestControllerAdvice
-- ResourceNotFoundException
-
-Handled exceptions:
-
-- Product Not Found Exception
-- Runtime Exceptions
-
----
-
-# Validation
-
-Bean Validation is implemented for request validation.
-
-Used annotations:
-
-- @NotBlank
-- @Positive
-
----
-
-# Project Structure
-
-```
-ProductManagementAPI
-│
-├── src/main/java
-│   │
-│   └── com.product.api
-│       │
-│       ├── config
-│       ├── controller
-│       ├── dto
-│       ├── exception
-│       ├── mapper
-│       ├── model
-│       ├── repository
-│       └── service
-│
-├── src/main/resources
-│
-├── pom.xml
-├── README.md
-└── .gitignore
-```
-
----
-
-# How To Run The Project
-
-### Step 1: Clone Repository
-
-```
-git clone <repository-url>
-```
-
-### Step 2: Configure Database
-
-Update MySQL credentials in:
-
-```
-application.properties
-```
-
-### Step 3: Configure Cloudinary
-
-Add Cloudinary credentials:
-
-```
-cloudinary.cloud-name
-cloudinary.api-key
-cloudinary.secret-key
-```
-
-### Step 4: Run Application
-
-Using Maven:
-
-```
-mvn spring-boot:run
-```
-
-Application will start at:
-
-```
-http://localhost:8080
-```
-
----
-
-# Future Improvements
-
-- Add Spring Security
-- Add JWT Authentication
-- Add Swagger API Documentation
-- Add Pagination and Sorting
-
----
-
-# Author
-
-**Roshni Anuragi**
-
-Java Backend Developer | Spring Boot Developer# Product Management API
-
-A RESTful Backend API developed using **Spring Boot** for managing products with complete CRUD operations and image upload functionality using **Cloudinary**.
-
-This project follows a clean layered architecture using **Controller, DTO, Service, Mapper, Repository, and Entity layers**.
-
----
-
-# Features
-
-- Create Product
-- Get All Products
-- Get Product By ID
-- Update Product
-- Delete Product
-- Upload Product Images using Cloudinary
-- Store Image URL and Public ID
-- DTO based Request and Response Handling
-- Entity to DTO Mapping
-- Global Exception Handling
-- Input Validation
-- MySQL Database Integration
-
----
-
-# Technology Stack
-
-## Backend
-
-- Java 21
-- Spring Boot
-- Spring MVC
-- Spring Data JPA
-- Hibernate
-
-## Database
-
-- MySQL
-
-## Tools
-
-- Maven
-- Postman
-- Git
-- GitHub
-
-## Third Party Service
-
-- Cloudinary (Image Storage)
-
----
-
-# Project Architecture
-
-```
-Controller Layer
-        |
-        ↓
-DTO Layer
-        |
-        ↓
-Service Layer
-        |
-        ↓
-Mapper Layer
-        |
-        ↓
-Entity Layer
-        |
-        ↓
-Repository Layer
-        |
-        ↓
-Database
-```
-
----
-
-# API Endpoints
-
-## 1. Create Product
-
-**POST**
-
-```
-/products
-```
-
-Request Type:
-
-```
-multipart/form-data
-```
-
-Request Parameters:
-
-```
-name        : Product name
-description : Product description
-price       : Product price
-file        : Product image
-```
-
----
-
-## 2. Get All Products
-
-**GET**
-
-```
-/products
-```
-
-Returns all products from database.
-
----
-
-## 3. Get Product By ID
-
-**GET**
-
-```
-/products/{id}
-```
-
-Example:
-
-```
-/products/1
-```
-
----
-
-## 4. Update Product
-
-**PUT**
-
-```
-/products/{id}
-```
-
-Request Parameters:
-
-```
-name
-description
-price
-file(optional)
-```
-
----
-
-## 5. Delete Product
-
-**DELETE**
-
-```
-/products/{id}
-```
-
-Example:
-
-```
-/products/1
-```
-
----
-
-# Database Configuration
-
-This project uses **MySQL** database for storing product information.
-
-Database configuration is managed through:
-
-```
-application.properties
-```
-
-Required properties:
-
-```
-spring.datasource.url
-spring.datasource.username
-spring.datasource.password
-```
-
----
-
-# Cloudinary Configuration
-
-Cloudinary is integrated for uploading and storing product images.
-
-Required configuration:
-
-```
-cloudinary.cloud-name
-cloudinary.api-key
-cloudinary.secret-key
-```
-
----
-
-# Exception Handling
-
-The application uses centralized exception handling.
-
-Implemented using:
-
-- `@RestControllerAdvice`
-- Custom `ResourceNotFoundException`
-
-Handled cases:
-
-- Product not found
-- Runtime exceptions
-
----
-
-# Validation
-
-Request validation is implemented using Spring Boot Bean Validation.
-
-Used annotations:
-
-- `@NotBlank`
-- `@Positive`
-
----
-
-# Project Structure
-
-```
-ProductManagementAPI
-│
-├── src/main/java
-│   │
-│   └── com.product.api
-│       │
-│       ├── config
-│       ├── controller
-│       ├── dto
-│       ├── exception
-│       ├── mapper
-│       ├── model
-│       ├── repository
-│       └── service
-│
-├── src/main/resources
-│
-├── pom.xml
-├── README.md
-└── .gitignore
-```
-
----
-
-# How To Run The Project
-
-### 1. Clone Repository
-
-```
-git clone <repository-url>
-```
-
-### 2. Configure MySQL Database
-
-Update database credentials in:
-
-```
-application.properties
-```
-
-### 3. Configure Cloudinary
-
-Add Cloudinary credentials:
-
-```
-cloudinary.cloud-name
-cloudinary.api-key
-cloudinary.secret-key
-```
-
-### 4. Run Application
-
-Using Maven:
-
-```
-mvn spring-boot:run
-```
-
-Application runs on:
-
-```
-http://localhost:8080
-```
-
----
-
-# Author
-
-**Roshni Anuragi**
-
-Java Backend Developer | Spring Boot Developer# 🚀 Product Management API
-
-A Spring Boot REST API for Product Management with Cloudinary image upload support. This project demonstrates CRUD operations, DTO architecture, validation, exception handling, and MySQL database integration.
-
----
-
-# 📌 Features
-
-- ✅ Create Product with Image Upload
-- ✅ Get All Products
-- ✅ Get Product by ID
-- ✅ Update Product Details and Image
-- ✅ Delete Product and Image
-- ✅ Cloudinary Image Storage
-- ✅ MySQL Database Integration
-- ✅ DTO (Request & Response)
-- ✅ Global Exception Handling
-- ✅ Input Validation
-- ✅ RESTful API Design
-
----
-
-# 🛠️ Tech Stack
+## Technology Stack
 
 - Java 21
 - Spring Boot
 - Spring Web
 - Spring Data JPA
+- Hibernate
 - MySQL
 - Cloudinary
 - Maven
-- Hibernate
 - Jakarta Validation
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
 ```text
 src
@@ -659,9 +53,129 @@ src
 
 ---
 
-# ⚙️ Configuration
+## API Endpoints
 
-Store the following values in your environment variables:
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /products | Create Product |
+| GET | /products | Get All Products |
+| GET | /products/{id} | Get Product By ID |
+| PUT | /products/{id} | Update Product |
+| DELETE | /products/{id} | Delete Product |
+
+---
+
+## Configuration
+
+Configure the following environment variables:
+
+```properties
+DB_URL=your_database_url
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_SECRET_KEY=your_secret_key
+```
+
+---
+
+## Running the Project
+
+```bash
+git clone https://github.com/roshnianuragi/ProductManagementAPI.git
+
+cd ProductManagementAPI
+
+mvn spring-boot:run
+```
+
+The application runs on:
+
+```text
+http://localhost:8080
+```# Product Management API
+
+## Overview
+
+Product Management API is a RESTful backend application developed using Spring Boot. It provides complete CRUD operations for managing products with image upload support using Cloudinary. The project follows a clean layered architecture using Controller, Service, Repository, DTO, Mapper, and Entity. The application uses MySQL for data persistence and exposes REST APIs for product management.
+
+---
+
+## Features
+
+- Create Product
+- Get All Products
+- Get Product By ID
+- Update Product
+- Delete Product
+- Cloudinary Image Upload
+- DTO (Request & Response)
+- Mapper
+- Global Exception Handling
+- Request Validation
+- MySQL Database Integration
+
+---
+
+## Technology Stack
+
+- Java 21
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Cloudinary
+- Maven
+- Jakarta Validation
+
+---
+
+## Project Structure
+
+```text
+ProductManagementAPI
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.product.api
+│   │   │       ├── config
+│   │   │       ├── controller
+│   │   │       ├── dto
+│   │   │       ├── exception
+│   │   │       ├── mapper
+│   │   │       ├── model
+│   │   │       ├── repository
+│   │   │       └── service
+│   │   └── resources
+│   │       └── application.properties
+│   └── test
+│
+├── pom.xml
+├── README.md
+└── .gitignore
+```
+
+---
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/products` | Create Product |
+| GET | `/products` | Get All Products |
+| GET | `/products/{id}` | Get Product By ID |
+| PUT | `/products/{id}` | Update Product |
+| DELETE | `/products/{id}` | Delete Product |
+
+---
+
+## Configuration
+
+Configure the following environment variables before running the application.
 
 ```properties
 DB_URL=your_database_url
@@ -677,69 +191,34 @@ The application reads these values from `application.properties`.
 
 ---
 
-# ▶️ Running the Project
+## Running the Project
 
-### Clone the repository
+Clone the repository.
 
 ```bash
 git clone https://github.com/roshnianuragi/ProductManagementAPI.git
 ```
 
-### Navigate to the project
+Navigate to the project directory.
 
 ```bash
 cd ProductManagementAPI
 ```
 
-### Run the application
+Run the application.
 
 ```bash
 mvn spring-boot:run
 ```
 
-The application will start at:
+The application will start on:
 
-```
+```text
 http://localhost:8080
 ```
 
 ---
 
-# 📡 API Endpoints
+## Summary
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/products` | Add Product |
-| GET | `/products` | Get All Products |
-| GET | `/products/{id}` | Get Product By ID |
-| PUT | `/products/{id}` | Update Product |
-| DELETE | `/products/{id}` | Delete Product |
-
----
-
-# ✅ Project Highlights
-
-- REST API using Spring Boot
-- DTO-based architecture
-- Cloudinary image management
-- Exception handling with custom exceptions
-- Request validation
-- Clean layered architecture
-- Environment variable configuration
-- GitHub-ready project structure
-
----
-
-# 🚀 Future Improvements
-
-- Spring Security
-- JWT Authentication
-- Swagger/OpenAPI Documentation
-- Pagination & Sorting
-- Unit Testing
-
----
-
-# 📄 License
-
-This project is created for learning and educational purposes.
+This project demonstrates the implementation of a RESTful Product Management API using Spring Boot. It includes CRUD operations, Cloudinary image upload, DTO-based architecture, request validation, global exception handling, and MySQL database integration following a clean layered architecture.
