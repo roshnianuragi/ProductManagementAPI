@@ -606,4 +606,140 @@ http://localhost:8080
 
 **Roshni Anuragi**
 
-Java Backend Developer | Spring Boot Developer
+Java Backend Developer | Spring Boot Developer# 🚀 Product Management API
+
+A Spring Boot REST API for Product Management with Cloudinary image upload support. This project demonstrates CRUD operations, DTO architecture, validation, exception handling, and MySQL database integration.
+
+---
+
+# 📌 Features
+
+- ✅ Create Product with Image Upload
+- ✅ Get All Products
+- ✅ Get Product by ID
+- ✅ Update Product Details and Image
+- ✅ Delete Product and Image
+- ✅ Cloudinary Image Storage
+- ✅ MySQL Database Integration
+- ✅ DTO (Request & Response)
+- ✅ Global Exception Handling
+- ✅ Input Validation
+- ✅ RESTful API Design
+
+---
+
+# 🛠️ Tech Stack
+
+- Java 21
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- MySQL
+- Cloudinary
+- Maven
+- Hibernate
+- Jakarta Validation
+
+---
+
+# 📂 Project Structure
+
+```text
+src
+├── config
+├── controller
+├── dto
+├── exception
+├── mapper
+├── model
+├── repository
+├── service
+└── resources
+```
+
+---
+
+# ⚙️ Configuration
+
+Store the following values in your environment variables:
+
+```properties
+DB_URL=your_database_url
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_SECRET_KEY=your_secret_key
+```
+
+The application reads these values from `application.properties`.
+
+---
+
+# ▶️ Running the Project
+
+### Clone the repository
+
+```bash
+git clone https://github.com/roshnianuragi/ProductManagementAPI.git
+```
+
+### Navigate to the project
+
+```bash
+cd ProductManagementAPI
+```
+
+### Run the application
+
+```bash
+mvn spring-boot:run
+```
+
+The application will start at:
+
+```
+http://localhost:8080
+```
+
+---
+
+# 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/products` | Add Product |
+| GET | `/products` | Get All Products |
+| GET | `/products/{id}` | Get Product By ID |
+| PUT | `/products/{id}` | Update Product |
+| DELETE | `/products/{id}` | Delete Product |
+
+---
+
+# ✅ Project Highlights
+
+- REST API using Spring Boot
+- DTO-based architecture
+- Cloudinary image management
+- Exception handling with custom exceptions
+- Request validation
+- Clean layered architecture
+- Environment variable configuration
+- GitHub-ready project structure
+
+---
+
+# 🚀 Future Improvements
+
+- Spring Security
+- JWT Authentication
+- Swagger/OpenAPI Documentation
+- Pagination & Sorting
+- Unit Testing
+
+---
+
+# 📄 License
+
+This project is created for learning and educational purposes.
